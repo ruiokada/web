@@ -1,0 +1,14 @@
+title: "Web"
+baseurl: ""
+url: "https://web.rso.io"
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - "*/README.md"
+  - .gitignore
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile

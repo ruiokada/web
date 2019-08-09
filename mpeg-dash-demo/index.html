@@ -1,0 +1,33 @@
+---
+layout: default
+title: "MPEG-DASH Demo"
+stylesheets:
+    - main.css
+    - https://vjs.zencdn.net/7.6.0/video-js.css
+---
+
+<body>
+    <div class="main-wrap">
+        <div class="centered">
+            <video id="dash-video" class="video-js vjs-default-skin" controls data-setup='{"fluid": true}'></video>
+            <div class="info">
+                <a href="https://www.youtube.com/watch?v=j0wBLmDVO6M">Sakura (GH4,Apple Prores422 HQ / Anamorphic1.33x 4K)</a> by <a href="https://www.youtube.com/channel/UCyi2eDH0d1cV5dDkxRKQxsQ">Graphr</a>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
+    <script type="text/javascript" src='https://vjs.zencdn.net/7.6.0/video.js'></script>
+    <script type="text/javascript">
+        (function () {
+            var player = videojs('dash-video');
+            player.ready(function () {
+                player.src([{
+                    src: 'video/sakura/sakura_dash.mpd',
+                    type: 'application/dash+xml'
+                },{ src: 'video/sakura/sakura_dashinit.mp4',
+                    type: 'video/mp4'
+                }]);
+            });
+        })();
+    </script>
+</body>
